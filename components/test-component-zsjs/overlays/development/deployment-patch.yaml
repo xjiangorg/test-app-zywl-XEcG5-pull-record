@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: test-component-zsjs
+  namespace: build-e2e-hlou-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio-qe/test-images@sha256:71b2c35a977b0d6c54d7624445b7dc33f85e9af051099198001ce9ba0224fd6a
+        name: my-python
+        resources: {}
+status: {}
