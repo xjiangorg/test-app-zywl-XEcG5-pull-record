@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-component-zsjs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-component-zsjs
+    app.kubernetes.io/part-of: test-app-zywl
+  name: test-component-zsjs
+  namespace: build-e2e-hlou-tenant
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: python-app
+      app.kubernetes.io/instance: test-component-zsjs
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-app
+        app.kubernetes.io/instance: test-component-zsjs
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio-qe/test-images:b49168b91e3f4350a68012f3ee3028b7
+        name: my-python
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}

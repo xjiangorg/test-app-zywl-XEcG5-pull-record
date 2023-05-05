@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-component-zsjs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-component-zsjs
+    app.kubernetes.io/part-of: test-app-zywl
+  name: test-component-zsjs
+  namespace: build-e2e-hlou-tenant
+spec:
+  ports:
+  - port: 8081
+    targetPort: 8081
+  selector:
+    app.kubernetes.io/instance: test-component-zsjs
+status:
+  loadBalancer: {}

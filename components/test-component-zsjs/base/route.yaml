@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-component-zsjs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-component-zsjs
+    app.kubernetes.io/part-of: test-app-zywl
+  name: test-component-zsjs
+  namespace: build-e2e-hlou-tenant
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: test-component-zsjs
+    weight: null
+status: {}
